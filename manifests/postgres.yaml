@@ -1,0 +1,22 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: challenge-database
+  namespace: default
+  labels:
+    application: challenge
+    environment: production
+    team: SRE
+spec:
+  teamId: "SRE"
+  volume:
+    size: 1Gi
+  numberOfInstances: 2
+  users:
+    stord: []
+  databases:
+    stord_prod: stord
+  preparedDatabases:
+    bar: {}
+  postgresql:
+    version: "15"
